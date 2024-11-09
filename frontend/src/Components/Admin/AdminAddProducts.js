@@ -4,137 +4,81 @@ import Multiselect from 'multiselect-react-dropdown';
 import avatar from '../../images/avatar.png'
 import add from '../../images/add.png'
 import MultiImageInput from 'react-multiple-image-input';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { CompactPicker } from 'react-color'
 import { ToastContainer } from 'react-toastify';
 import AdminAddProductsHook from './../../hook/products/add-products-hook';
 
-const AdminAddProducts = () => {
 
-    const [onChangeDesName, onChangeQty, onChangeColor, onChangePriceAfter, onChangePriceBefor, onChangeProdName, showColor, category, brand, priceAftr, images, setImages, onSelect, onRemove, options, handelChangeComplete, removeColor, onSeletCategory, handelSubmit, onSeletBrand, colors, priceBefore, qty, prodDescription, prodName] =
-        AdminAddProductsHook();
-        
-    return (
-        <div>
-            <Row className="justify-content-start ">
-                <div className="admin-content-text pb-4"> اضافه منتج جديد</div>
-                <Col sm="8">
-                    <div className="text-form pb-2"> صور للمنتج</div>
+const ProductCardHook = (item, favProd) => {
+    const dispatch = useDispatch();
 
-                    <MultiImageInput
-                        images={images}
-                        setImages={setImages}
-                        theme={"light"}
-                        allowCrop={false}
-                        max={4}
-                    />
+    // State for fav image and fav status
+    const [favImg, setFavImg] = useState(favOff);
+    const [loadingAdd, setLoadingAdd] = useState(false);
+    const [loadingRemove, setLoadingRemove] = useState(false);
+    const [isFav, setIsFav] = useState(favProd.some(fItem => fItem === item._id));
 
-                    <input
-                        value={prodName}
-                        onChange={onChangeProdName}
-                        type="text"
-                        className="input-form d-block mt-3 px-3"
-                        placeholder="اسم المنتج"
-                    />
-                    <textarea
-                        className="input-form-area p-2 mt-3"
-                        rows="4"
-                        cols="50"
-                        placeholder="وصف المنتج"
-                        value={prodDescription}
-                        onChange={onChangeDesName}
-                    />
-                    <input
-                        type="number"
-                        className="input-form d-block mt-3 px-3"
-                        placeholder="السعر قبل الخصم"
-                        value={priceBefore}
-                        onChange={onChangePriceBefor}
-                    />
-                    <input
-                        type="number"
-                        className="input-form d-block mt-3 px-3"
-                        placeholder="السعر بعد الخصم"
-                        value={priceAftr}
-                        onChange={onChangePriceAfter}
-                    />
-                    <input
-                        type="number"
-                        className="input-form d-block mt-3 px-3"
-                        placeholder="الكمية المتاحة"
-                        value={qty}
-                        onChange={onChangeQty}
-                    />
-                    <select
-                        name="cat"
-                        onChange={onSeletCategory}
-                        className="select input-form-area mt-3 px-2 ">
-                        <option value="0">التصنيف الرئيسي</option>
-                        {
-                            category.data ? (category.data.map((item, index) => {
-                                return (
-                                    <option key={index} value={item._id}>{item.name}</option>
-                                )
-                            })) : null
+    useEffect(() => {
+        setIsFav(favProd.some(fItem => fItem === item._id));
+    }, [favProd, item._id]);
 
-                        }
-                    </select>
+    useEffect(() => {
+        if (isFav) {
+            setFavImg(favOn);
+        } else {
+            setFavImg(favOff);
+        }
+    }, [isFav]);
 
-                    <Multiselect
-                        className="mt-2 text-end"
-                        placeholder="التصنيف الفرعي"
-                        options={options}
-                        onSelect={onSelect}
-                        onRemove={onRemove}
-                        displayValue="name"
-                        style={{ color: "red" }}
-                    />
-                    <select
-                        name="brand"
-                        onChange={onSeletBrand}
-                        className="select input-form-area mt-3 px-2 ">
-                        <option value="0">اختر ماركة</option>
-                        {
-                            brand.data ? (brand.data.map((item, index) => {
-                                return (
-                                    <option key={index} value={item._id}>{item.name}</option>
-                                )
-                            })) : null
+    const resAdd = useSelector(state => state.addToWishListReducer.addWishList);
+    const resRemove = useSelector(state => state.addToWishListReducer.removeWishList);
 
-                        }
-                    </select>
-                    <div className="text-form mt-3 "> الالوان المتاحه للمنتج</div>
-                    <div className="mt-1 d-flex">
-                        {
-                            colors.length >= 1 ? (
-                                colors.map((color, index) => {
-                                    return (
-                                        <div key={index}
-                                            onClick={() => removeColor(color)}
-                                            className="color ms-2 border  mt-1"
-                                            style={{ backgroundColor: color }}></div>
-                                    )
-                                })
+    const addToWishListData = async () => {
+        setIsFav(true);
+        setFavImg(favOn);
+        setLoadingAdd(true);
+        dispatch(addProductToWishList({ productId: item._id }));
+    };
 
-                            ) : null
-                        }
+    const removeToWishListData = async () => {
+        setIsFav(false);
+        setFavImg(favOff);
+        setLoadingRemove(true);
+        await dispatch(removeProductToWishList(item._id));
+        setLoadingRemove(false);
+    };
 
-                        <img onClick={onChangeColor} src={add} alt="" width="30px" height="35px" style={{ cursor: 'pointer' }} />
-                        {
-                            showColor === true ? <CompactPicker onChangeComplete={handelChangeComplete} /> : null
-                        }
+    const handelFav = () => {
+        if (isFav) {
+            removeToWishListData();
+        } else {
+            addToWishListData();
+        }
+    };
 
-                    </div>
-                </Col>
-            </Row>
-            <Row>
-                <Col sm="8" className="d-flex justify-content-end ">
-                    <button onClick={handelSubmit} className="btn-save d-inline mt-2 ">حفظ التعديلات</button>
-                </Col>
-            </Row>
-            <ToastContainer />
-        </div>
-    )
-}
+    useEffect(() => {
+        if (!loadingAdd && resAdd) {
+            if (resAdd.status === 200) {
+                notify("تمت اضافة المنتج للمفضلة بنجاح", "success");
+            } else if (resAdd.status === 401) {
+                notify("انتا غير مسجل", "error");
+            }
+        }
+    }, [loadingAdd, resAdd]);
 
-export default AdminAddProducts
+    useEffect(() => {
+        if (!loadingRemove && resRemove) {
+            if (resRemove.status === "success") {
+                notify("تمت حذف المنتج من المفضلة بنجاح", "warn");
+            } else if (resRemove.status === 401) {
+                notify("انتا غير مسجل", "error");
+            }
+        }
+    }, [loadingRemove, resRemove]);
+
+    return [removeToWishListData, addToWishListData, handelFav, favImg];
+};
+
+export default ProductCardHook;
