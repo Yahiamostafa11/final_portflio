@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Almarai", sans-serif;
+  font-family: "Arial", sans-serif;
 }
 .m-0 {
   margin: 0;
@@ -9,10 +9,10 @@ body {
   padding: 0;
 }
 .font {
-  font-family: "Almarai", sans-serif;
+  font-family: "Arial", sans-serif;
   background-color: #f9f9f9;
 }
-.hieght-search {
+.height-search {
   height: 80vh;
 }
 .logo {
@@ -28,9 +28,9 @@ body {
   font-size: 12px;
   font-weight: bold;
 }
-.sub-tile {
+.sub-title {
   color: #272727;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 21px;
   font-weight: bold;
   letter-spacing: 0;
@@ -39,27 +39,27 @@ body {
 
 .slider-background {
   background: linear-gradient(173.68deg, #ffedf5 0%, #ffd5e7 100%);
-  height: "296px";
+  height: 296px;
   width: 294.26px;
 }
 .slider-background2 {
   background: linear-gradient(174.76deg, #d3deff 0%, #a8baff 100%);
-  height: "296px";
+  height: 296px;
   width: 294.26px;
 }
 .slider-background3 {
   background: linear-gradient(176.69deg, #f8f0d5 0%, #efdcab 100%);
-  height: "296px";
+  height: 296px;
   width: 294.26px;
 }
 .slider-background4 {
   background: linear-gradient(175.24deg, #b2e8f0 0%, #7bccdc 100%);
-  height: "296px";
+  height: 296px;
   width: 294.26px;
 }
 .slider-title {
   color: #915970;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 24px;
   letter-spacing: 0;
   line-height: 32px;
@@ -67,7 +67,7 @@ body {
 }
 .slider-text {
   color: #915970;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 30px;
   font-weight: 800;
   letter-spacing: 0;
@@ -79,23 +79,23 @@ body {
   height: 130px;
   width: 130px;
 }
-.categoty-card {
+.category-card {
   height: 140px;
   width: 100%;
   border-radius: 50%;
   opacity: 0.3;
 }
 
-.categoty-card-img {
+.category-card-img {
   max-width: 110px;
   max-height: 100px;
   position: absolute;
   top: 20%;
   left: 10%;
 }
-.categoty-card-text {
+.category-card-text {
   color: #555550;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
@@ -105,7 +105,7 @@ body {
 
 .card-title {
   color: #555550;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 20px;
@@ -113,7 +113,7 @@ body {
 }
 .card-price {
   color: #272727;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 21px;
   font-weight: bold;
   letter-spacing: 0;
@@ -121,14 +121,14 @@ body {
 }
 .card-currency {
   color: #555550;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 18px;
   letter-spacing: 0;
   line-height: 24px;
 }
 .card-rate {
   color: #ffc107;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0;
@@ -154,8 +154,8 @@ body {
   cursor: pointer;
 }
 
-/* discount setion */
-.discount-backcolor {
+/* discount section */
+.discount-backColor {
   height: 130px;
   border-radius: 8px;
   background: radial-gradient(circle, #767676 0%, #4d4f50 100%, #494c4d 100%);
@@ -168,13 +168,13 @@ body {
   letter-spacing: 0;
   line-height: 39px;
 }
-.dicount-img {
+.discount-img {
   max-height: 130px;
   max-width: 80%;
 }
 /* end discount */
 
-/* foter */
+/* footer */
 .footer-background {
   background-color: #ffffff;
 }
@@ -182,9 +182,9 @@ body {
 .footer {
   width: 100%;
 }
-.footer-shroot {
+.footer-terms {
   color: #979797;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 0;
@@ -194,7 +194,7 @@ body {
 
 .footer-phone {
   color: #979797;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 13px;
   font-weight: bold;
   text-align: right;
@@ -205,7 +205,7 @@ body {
 /* card filter style */
 .search-count-text {
   color: #979797;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
@@ -232,7 +232,7 @@ body {
 /* end card filter */
 
 /* products details page */
-.product-gallary-card {
+.product-gallery-card {
   height: 470px !important;
   width: 370px;
   border-radius: 29px;
@@ -241,7 +241,7 @@ body {
 
 .cat-text {
   color: #979797;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -251,7 +251,7 @@ body {
 
 .cat-title {
   color: #555550;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 14px;
   font-weight: normal;
   text-align: right;
@@ -259,7 +259,7 @@ body {
 
 .cat-rate {
   color: #ffc107;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0;
@@ -267,9 +267,9 @@ body {
   text-align: right;
 }
 
-.barnd-text {
+.brand-text {
   color: #555550;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 0;
@@ -299,7 +299,7 @@ body {
   padding-bottom: 10px;
   border-radius: 9px;
   color: #555550;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 12px;
   font-weight: bold;
   background-color: #ffffff;
@@ -313,20 +313,20 @@ body {
   border: none;
   background-color: #272727;
   color: #ffffff;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 14px;
   font-weight: normal;
 }
 .product-cart-add:hover {
   color: #bdbaba !important;
 }
-/* products gallary slide style */
+/* products gallery slide style */
 .image-gallery-slide {
   width: 372px;
   height: 470px;
   border-radius: 29px;
 }
-/* end gallary */
+/* end gallery */
 /* end products page */
 
 /* pagination */
@@ -351,7 +351,7 @@ body {
 
 .cat-text-header {
   color: #979797;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -364,7 +364,7 @@ body {
   color: #555550;
 }
 
-/* end categoery header */
+/* end category header */
 
 /* login and register style */
 
@@ -377,7 +377,7 @@ body {
 }
 .title-login {
   color: #555550;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 21px;
   font-weight: 800;
   letter-spacing: 0;
@@ -401,7 +401,7 @@ body {
 /* cart page */
 .cart-title {
   color: #555550;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 21px;
   font-weight: 800;
   letter-spacing: 0;
@@ -414,16 +414,16 @@ body {
   border-radius: 20px;
   background-color: #ffffff;
 }
-.copon-input {
+.coupon-input {
   box-sizing: border-box;
   height: 46px;
   width: 90%;
   border: 1px solid #979797;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 12px;
   font-weight: normal;
 }
-.copon-btn {
+.coupon-btn {
   cursor: pointer;
   border: none;
   height: 46px;
@@ -435,7 +435,7 @@ body {
   border-radius: 0 !important;
   background-color: #272727;
   color: #ffff !important;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 12px;
   font-weight: normal;
 }
@@ -459,7 +459,7 @@ body {
 
 .admin-side-text {
   color: #272727;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -477,7 +477,7 @@ body {
 }
 .admin-content-text {
   color: #555550;
-  font-family: Almarai;
+  font-family: Arial;
   font-size: 21px;
   font-weight: 800;
   letter-spacing: 0;
@@ -486,7 +486,7 @@ body {
 }
 .item-delete-edit {
   color: #979797;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 16px;
   letter-spacing: 0;
   line-height: 30px;
@@ -496,7 +496,7 @@ body {
 
 .text-form {
   color: #979797;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 16px;
   letter-spacing: 0;
   line-height: 20px;
@@ -558,14 +558,14 @@ body {
 }
 .rate-count {
   color: #979797;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 23px;
 }
 .rate-name {
   color: #555550;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0;
@@ -573,7 +573,7 @@ body {
 }
 .rate-description {
   color: #555550;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 14px;
   letter-spacing: 0;
   line-height: 19px;
@@ -591,7 +591,7 @@ body {
 }
 .order-title {
   color: #272727;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 16px;
   font-weight: bold;
 }
@@ -640,7 +640,7 @@ body {
 /* filter side style */
 .filter-title {
   color: #555550;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
@@ -649,7 +649,7 @@ body {
 }
 .filter-sub {
   color: #555550;
-  font-family: "Almarai";
+  font-family: "Arial";
   font-size: 12px;
   letter-spacing: 0;
   line-height: 17px;
@@ -684,5 +684,5 @@ body {
 
 .badge {
   font-size: 12px !important;
-font-weight: bold !important;
+  font-weight: bold !important;
 }
